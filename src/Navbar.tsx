@@ -3,12 +3,13 @@ import { useCart } from './cart/CartContext'
 
 export default function Navbar() {
   const { totalQuantity } = useCart()
+  const baseUrl = import.meta.env.BASE_URL
 
   return (
     <header className="border-b border-slate-200 bg-white">
       <div className="mx-auto flex w-full max-w-6xl items-center justify-between px-4 py-4">
         <Link to="/" className="flex items-center gap-3">
-          <img src="/arey_favicon.svg" alt="Arey Project" className="h-9 w-auto" />
+          <img src={`${baseUrl}arey_favicon.svg`} alt="Arey Project" className="h-9 w-auto" />
           {/* <span className="text-base font-semibold text-slate-900">Arey Project</span> */}
         </Link>
 

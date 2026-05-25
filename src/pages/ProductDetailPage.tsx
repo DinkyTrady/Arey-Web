@@ -9,6 +9,7 @@ export default function ProductDetailPage() {
   const product = useMemo(() => (slug ? getProductBySlug(slug) : undefined), [slug])
   const { add } = useCart()
   const [qty, setQty] = useState(1)
+  const baseUrl = import.meta.env.BASE_URL
 
   if (!product) {
     return (
@@ -24,7 +25,7 @@ export default function ProductDetailPage() {
   return (
     <div className="grid gap-10 md:grid-cols-2">
       <div className="overflow-hidden rounded-2xl border border-slate-200 bg-white">
-        <img src={product.imageSrc} alt={product.name} className="h-auto w-full" />
+        <img src={`${baseUrl}${product.imageSrc.replace(/^\//, '')}`} alt={product.name} className="h-auto w-full" />
       </div>
       <div className="space-y-5">
         <div>

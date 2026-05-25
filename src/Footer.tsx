@@ -1,11 +1,13 @@
 import { Link } from 'react-router-dom'
 
 export default function Footer() {
+  const baseUrl = import.meta.env.BASE_URL
+
   return (
     <footer className="mt-12 border-t border-slate-200 bg-slate-50">
       <div className="mx-auto grid w-full max-w-6xl gap-8 px-4 py-10 md:grid-cols-3">
         <div className="space-y-3">
-          <img src="/Arrey_Project_logo.png" alt="Arey Project" className="h-10 w-auto" />
+          <img src={`${baseUrl}Arrey_Project_logo.png`} alt="Arey Project" className="h-10 w-auto" />
           <p className="text-sm text-slate-600">
             Vendor PDH, Jaket, Kaos, dan merchandise untuk kebutuhan instansi, komunitas, dan event.
           </p>
@@ -35,7 +37,7 @@ export default function Footer() {
               target="_blank"
               rel="noreferrer"
             >
-              <img src="/whatsapp-logo.webp" alt="WhatsApp" className="h-6 w-6" />
+              <img src={`${baseUrl}whatsapp-logo.webp`} alt="WhatsApp" className="h-6 w-6" />
               <span>Arey Project</span>
             </a>
             <a
@@ -44,14 +46,14 @@ export default function Footer() {
               target="_blank"
               rel="noreferrer"
             >
-              <img src="/instagram-logo.webp" alt="Instagram" className="h-6 w-6" />
+              <img src={`${baseUrl}instagram-logo.webp`} alt="Instagram" className="h-6 w-6" />
               <span>@arey.project</span>
             </a>
             <a
               className="flex items-center gap-3 text-slate-600 hover:text-slate-900"
               href="mailto:areycreatives@gmail.com"
             >
-              <img src="/email-svgrepo-com.svg" alt="Email" className="h-6 w-6" />
+              <img src={`${baseUrl}email-svgrepo-com.svg`} alt="Email" className="h-6 w-6" />
               areycreatives@gmail.com
             </a>
           </div>

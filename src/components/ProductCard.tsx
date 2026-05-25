@@ -5,11 +5,12 @@ import type { Product } from '../data/products'
 export default function ProductCard(props: { product: Product }) {
   const { add } = useCart()
   const product = props.product
+  const baseUrl = import.meta.env.BASE_URL
 
   return (
     <div className="overflow-hidden rounded-xl border border-slate-200 bg-white">
       <Link to={`/catalog/${product.slug}`} className="block">
-        <img src={product.imageSrc} alt={product.name} className="h-44 w-full object-cover" />
+        <img src={`${baseUrl}${product.imageSrc.replace(/^\//, '')}`} alt={product.name} className="h-44 w-full object-cover" />
       </Link>
       <div className="space-y-3 p-4">
         <div>

@@ -11,6 +11,8 @@ function FeatureCard(props: { title: string; description: string }) {
 }
 
 export default function HomePage() {
+  const baseUrl = import.meta.env.BASE_URL
+
   return (
     <div className="space-y-16">
       <section className="grid gap-10 md:grid-cols-2 md:items-center">
@@ -44,7 +46,7 @@ export default function HomePage() {
         </div>
 
         <div className="overflow-hidden rounded-2xl border border-slate-200 bg-white">
-          <img src="/asset_contoh_3.png" alt="Fast response" className="h-auto w-full" />
+          <img src={`${baseUrl}asset_contoh_3.png`} alt="Fast response" className="h-auto w-full" />
         </div>
       </section>
 
@@ -62,7 +64,11 @@ export default function HomePage() {
               to={`/catalog/${p.slug}`}
               className="group overflow-hidden rounded-xl border border-slate-200 bg-white hover:border-blue-200"
             >
-              <img src={p.imageSrc} alt={p.name} className="h-40 w-full object-cover" />
+              <img
+                src={`${baseUrl}${p.imageSrc.replace(/^\//, '')}`}
+                alt={p.name}
+                className="h-40 w-full object-cover"
+              />
               <div className="p-4">
                 <div className="text-sm font-semibold text-slate-900">{p.name}</div>
                 <div className="mt-1 text-sm text-slate-600">{p.tagline}</div>
@@ -114,15 +120,15 @@ export default function HomePage() {
 
       <section className="grid gap-4 md:grid-cols-2">
         <div className="overflow-hidden rounded-2xl border border-slate-200 bg-white">
-          <img src="/asset_contoh_4.png" alt="Merch promo" className="h-auto w-full" />
+          <img src={`${baseUrl}asset_contoh_4.png`} alt="Merch promo" className="h-auto w-full" />
         </div>
         <div className="overflow-hidden rounded-2xl border border-slate-200 bg-white">
-          <img src="/asset_contoh_5.png" alt="Partnership discount" className="h-auto w-full" />
+          <img src={`${baseUrl}asset_contoh_5.png`} alt="Partnership discount" className="h-auto w-full" />
         </div>
       </section>
 
       <section className="overflow-hidden rounded-2xl border border-slate-200 bg-white">
-        <img src="/asset_contoh_2.png" alt="Free ongkir Jawa Timur" className="h-auto w-full" />
+        <img src={`${baseUrl}asset_contoh_2.png`} alt="Free ongkir Jawa Timur" className="h-auto w-full" />
       </section>
 
       <section className="rounded-2xl bg-blue-700 p-8 text-white">
